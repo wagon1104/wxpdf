@@ -36,13 +36,15 @@
     box-shadow: 1px 5px 5px rgba(58,216,159,0.2);
 }
 .bu-list_icon {
-    position: absolute;
-    top: 38rpx;
-    left: 46rpx;
-    width: 113rpx;
-    height: 89rpx;
-    background: url("./zc0d0900000044fkjDF30.png") 0 0 no-repeat;
-    background-size: cover;
+ position:absolute;
+top:25rpx;
+left:46rpx;
+width:82rpx;
+height:111rpx;
+background:url("https://zongkai2.applinzi.com/image/timg.jpg") 0 0 no-repeat;
+background-size:cover;
+
+
 }
 .bu-list_icon_flight {
     top: 41rpx;
@@ -108,7 +110,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image:url("http://localhost:5050/image/slogan.png");
+    /* background-image:url("http://localhost:5050/image/slogan.png"); */
     box-shadow: none;
 }
 .coupons_box {

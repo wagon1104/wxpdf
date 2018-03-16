@@ -5,6 +5,7 @@ App({
   onLaunch: function () {
     console.log('App Launch')
     this.getMoc();
+    // this.getUserInfo();
   },  
   getUserInfo:function(cb){
     var that = this
@@ -16,6 +17,7 @@ App({
         success: function () {
           wx.getUserInfo({
             success: function (res) {
+              console.log("--------",res);
               that.globalData.userInfo = res.userInfo
               typeof cb == "function" && cb(that.globalData.userInfo)
             }
