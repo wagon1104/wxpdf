@@ -4,9 +4,13 @@
         "page/news/index",
         "page/user/index",
         "page/news/detail",    
-        "page/news/math"
+        "page/news/math",
+        "page/news/meizhouyilian",
+        "page/news/laoxushuxue"
 
                  
+
+
     ],
     "window": {
         "backgroundTextStyle": "light",

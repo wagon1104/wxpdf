@@ -13,7 +13,7 @@ Page({
           // '../../image/1.16众凯教育短文训练2-2.png'
         ],
         indicatorDots: true,
-        autoplay: true,
+        autoplay: false,
         interval: 5000,
         duration: 1000,
         nopic: "../../nopic.jpg",
@@ -45,7 +45,7 @@ Page({
         imgUrls.push(host+'/image/' + type + '/' + id + '/' + (i + 1) + suffix)
         
       }
-      if (type == "math") {
+      if (type == "math" || type=="math-meizhouyilian") {
         var article_answer = articles[type + "-answer"];
         var currArticle_answer = article_answer[id];
         var length_answer = currArticle_answer.length;
@@ -60,6 +60,13 @@ Page({
       if (type == "math") {
         title = "导学练习"
       }
+      if (type == "math-meizhouyilian") {
+        title = "每周一练"
+      }
+      if (type == "laoxushuxue") {
+        title = "老徐讲数学"
+      }
+      
       wx.setNavigationBarTitle({
         title: title + " " + id
       })
