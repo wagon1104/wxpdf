@@ -73,7 +73,33 @@ App({
     userInfo:null,
     hasLogin: false,
     openid: null,
-    mock:null
+    mock:null,
+    names:null
+  },
+  getNames: function (fn) {
+    var that = this;
+    wx.showToast({
+      title: '正在校验...',
+      icon: 'loading',
+      mask: true
+    });
+    //newsList
+    wx.request({
+      url: host + '/names.json',
+      method: 'GET',
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function (result) {
+        console.log(result.data)
+        // that.setData({
+        //   newList: that.data.newList ? that.data.newList.concat(result.data.result.list) : result.data.result.list
+        // });
+        that.globalData.names = result.data;
+        wx.hideToast();
+        if (fn) fn();
+      }
+    })
   },
   getMoc: function (fn) {
     var that = this;

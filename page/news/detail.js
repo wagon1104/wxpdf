@@ -14,6 +14,7 @@ Page({
         ],
         indicatorDots: true,
         autoplay: false,
+        vertical:false,
         interval: 5000,
         duration: 1000,
         nopic: "../../nopic.jpg",
@@ -65,6 +66,9 @@ Page({
       }
       if (type == "laoxushuxue") {
         title = "老徐讲数学"
+      }
+      if (type == "yingyubiji") {
+        title = "英语笔记"
       }
       
       wx.setNavigationBarTitle({
