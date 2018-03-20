@@ -81,7 +81,7 @@ input {
 
 .loginBtn {
   width: 68%;
-  height: 90rpx;
+  /* height: 90rpx; */
   margin-top: 50rpx;
   border: 5rpx #fff solid!important;
   color: #fff!important;

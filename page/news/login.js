@@ -72,7 +72,7 @@ Page({
   // 点击提交按钮
   loginSubmit: function (e) {
     console.log(this)
-    if (this.data.phonenumber != '' && this.data.password != '') {
+    if (this.data.phonenumber != '' ) {
       this.setData({
         numShow: 'none',
         psdShow: 'none',
@@ -87,45 +87,19 @@ Page({
           loadingHidden: true
         })
         wx.navigateTo({
-          url: '../zhihu/zhihu'
+          url: './homepage'
         })
       }, 1000)
 
-    } else if (this.data.phonenumber == '' && this.data.password != '') {
+    } else if (this.data.phonenumber == '') {
       this.setData({
         numShow: '',
         psdShow: 'none',
-        modelInnerHtml: '账号不能为空',
+        modelInnerHtml: '手机号不能为空',
         modalHidden: false
       })
 
       console.log("phonenumber不能为空" + this.data.numShow)
-    } else if (this.data.password == '' && this.data.phonenumber != '') {
-      this.setData({
-        numShow: 'none',
-        psdShow: '',
-        modelInnerHtml: '密码不能为空',
-        modalHidden: false
-      })
-
-      console.log("password不能为空" + this.data.psdShow)
-    } else {
-      this.setData({
-        numShow: '',
-        psdShow: '',
-        modelInnerHtml: '账号密码不能为空',
-        modalHidden: false
-      })
-
-      console.log("phonenumber不能为空" + this.data.numShow + "password不能为空" + this.data.psdShow)
-    }
-  },
-  // 点击找回密码
-  RandP: function () {
-    this.setData({
-      modelInnerHtml: '暂不支持注册和密码找回',
-      modalHidden: false
-    })
-    console.log("暂不支持注册和密码找回")
+    } 
   }
 })
