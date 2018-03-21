@@ -74,7 +74,8 @@ App({
     hasLogin: false,
     openid: null,
     mock:null,
-    names:null
+    names:null,
+    mobile:null
   },
   getNames: function (fn) {
     var that = this;

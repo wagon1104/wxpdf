@@ -90,40 +90,18 @@ Page({
     })
   },
   getNames: function (fn) {
-    var nickName;
-    if (app.globalData&&app.globalData.userInfo){
-      nickName = app.globalData.userInfo.nickName;
-      checkName()
-    }else{
-      app.getUserInfo(function(){ 
-        nickName = app.globalData.userInfo.nickName;
-        checkName()
-      }) 
-    }
-    function checkName(){
-      if (app.globalData && app.globalData.names && app.globalData.names.wagon1) {
-        if (app.globalData.names.nickName){
-          fn();
-        }else{
-          wx.navigateTo({
-            url: './404'
-          })
-        }
+
+    var mobile = wx.getStorageSync('mobile');
+
+    if (mobile) {
+        fn();
         
       } else {
-        app.getNames(function () {
-          if (app.globalData.names.nickName) {
-            fn();
-          } else {
-            wx.navigateTo({
-              url: './404'
-            })
-          }
+        
+        wx.navigateTo({
+          url: './login'
         })
       }
-    }
-    
-
   }
   
   

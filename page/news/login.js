@@ -72,7 +72,8 @@ Page({
   // 点击提交按钮
   loginSubmit: function (e) {
     console.log(this)
-    if (this.data.phonenumber != '' ) {
+    var phonenumber = this.data.phonenumber;
+    if (phonenumber != '' ) {
       this.setData({
         numShow: 'none',
         psdShow: 'none',
@@ -82,14 +83,34 @@ Page({
       console.log("Success");
 
       var that = this
-      setTimeout(function () {
+      // setTimeout(function () {
         that.setData({
           loadingHidden: true
         })
-        wx.navigateTo({
-          url: './homepage'
+        app.getNames(function(){
+          if (app.globalData.names[phonenumber]){
+         
+            try {
+              wx.setStorageSync('mobile', phonenumber)
+            } catch (e) {
+              console.log(e)
+            }
+            wx.navigateBack({
+              delta: 1
+            })
+          }else{
+            wx.redirectTo({
+              url: "./404"
+            })
+          }
         })
-      }, 1000)
+        
+
+        // wx.redirectTo({
+        //   url: './homepage'
+        // })
+       
+      // }, 1000)
 
     } else if (this.data.phonenumber == '') {
       this.setData({
